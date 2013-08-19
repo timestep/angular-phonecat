@@ -1,22 +1,28 @@
-basePath = '../';
+module.exports = function (config) {
+  config.set({		
 
-files = [
-  ANGULAR_SCENARIO,
-  ANGULAR_SCENARIO_ADAPTER,
-  'test/e2e/**/*.js'
-];
+		basePath: '../',
 
-autoWatch = false;
+		files: [
+		  
+		  'test/e2e/**/*.js'
+		],
 
-browsers = ['Chrome'];
+		frameworks: ["ng-scenario"],
 
-singleRun = true;
+		autoWatch: false,
 
-proxies = {
-  '/': 'http://localhost:8000/'
-};
+		browsers: ['chromium-browser']
 
-junitReporter = {
-  outputFile: 'test_out/e2e.xml',
-  suite: 'e2e'
+		// singleRun: true,
+
+		// proxies: {
+		//   '/': 'http://localhost:8000/'
+		// },
+
+		// junitReporter: {
+		//   outputFile: 'test_out/e2e.xml',
+		//   suite: 'e2e'
+		// }
+  });
 };
