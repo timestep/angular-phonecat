@@ -16,7 +16,17 @@ describe('PhoneCat App', function() {
 			expect(repeater('.phones li').count()).toBe(1);
 
 			input('query').enter('motorola');
-			expect(repeater('.phones liu').count()).toBe(2);
+			expect(repeater('.phones li').count()).toBe(2);
 		});	
+
+		it('should display the current filter value within an element with id "status"',function(){
+			expect(element('#status').text()).toMatch(/Current filter: \s*$/);
+
+			input('query').enter('nexus');
+
+			expect(element('#status').text()).toMatch(/Current filter: nexus\s$/);
+
+			using('#status').expect(binding('query')).toBe('nexus');
+		}
 	});
 });

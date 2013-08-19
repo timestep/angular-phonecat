@@ -1,21 +1,24 @@
 <!doctype html>
-<html lang="en" ng-app>
+ <html ng-app ng-controller="PhoneListCtrl">
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+   <title ng-bind-template="Google Phone Gallery: {{query}}">Google Phone Gallery</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <script src="lib/angular/angular.js"></script>
   <script src="js/controllers.js"></script>
 </head>
-	<body ng-controller="PhoneListCtrl">
+	<body>
 		<div class="container-fluid">
+			
 			<div class="row-fluid">
-				
 				<div class="span2">
 					Search: <input ng-model = "query">
+					{{query}}
 				</div>
-				
+			</div>
+			
+			<div class="row-fluid">
 				<div class="span10">
 					<ul class="phones">
 						<li ng-repeat="phone in phones | filter:query">
@@ -23,9 +26,9 @@
 							<p>{{phone.snippet}}</p>
 						</li>
 					</ul>
-
 				</div>
 			</div>
+		
 		</div>	
 	</body>
 </html>
