@@ -8,4 +8,7 @@ function PhoneListCtrl($scope){
 		{"name":"Motorola XOOM with Wi-Fi","snippet":"The Next, Next Generation Tablet."},
 		{"name":"Motorola XOOM", "snippet":"The Next Next Generation Tablet"}
 	];
+
+	$scope.hello = "Hello, World!"
+
 }
